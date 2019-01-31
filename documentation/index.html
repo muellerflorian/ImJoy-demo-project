@@ -566,12 +566,18 @@ in your project folder and run</p>
 <pre><code class="bash">mkdocs build
 </code></pre>
 
-<p>You can then deploy this site to GitHub pages.</p>
-<pre><code class="bash">mkdocs gh-deploy --clean --force`
+<p>This will build the static website containing the documentation, which is stored
+in the newly created subfolder <code>site</code>. You can then automatically deploy this site
+to  GitHub pages.</p>
+<pre><code class="bash">mkdocs gh-deploy --clean --force
 </code></pre>
 
-<p>This will create a separate branch on your GitHub repository dedicated to the documentation.</p>
-<p>In order to use it, you can ....</p>
+<p>This will create a separate branch <code>gh-pages</code> on your GitHub repository dedicated
+to the documentation. GitHub will then automatically build the website with the
+documentation for you. To obtain the URL, go the <code>Settings</code> and <code>GitHub Pages</code>.
+The URL for this website is <a href="https://muellerflorian.github.io/ImJoy-demo-project/">https://muellerflorian.github.io/ImJoy-demo-project/</a></p>
+<p>Please note that each time you <strong>update the documentation</strong>, you have to perform these
+steps to build and deploy your documentation.</p>
                 
                   
                 
