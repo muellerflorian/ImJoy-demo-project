@@ -42,7 +42,7 @@
     
     
       
-        <title>Code organization - ImJoy demo plugin</title>
+        <title>1. Code organization - ImJoy demo plugin</title>
       
     
     
@@ -130,7 +130,7 @@
                 ImJoy demo plugin
               </span>
               <span class="md-header-nav__topic">
-                Code organization
+                1. Code organization
               </span>
             
           
@@ -202,16 +202,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Overview" class="md-tabs__link">
+      <a href=".." title="Overview" class="md-tabs__link md-tabs__link--active">
         Overview
       </a>
     
@@ -221,17 +219,16 @@
         
       
         
-  
-  
-    <li class="md-tabs__item">
       
-        <a href="./" title="Plugin development" class="md-tabs__link md-tabs__link--active">
-          Plugin development
-        </a>
+        
       
-    </li>
-  
-
+        
+      
+        
+      
+        
+      
+        
       
     </ul>
   </div>
@@ -294,39 +291,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../licence/" title="Licence" class="md-nav__link">
-      Licence
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Plugin development
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Plugin development
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
   
 
 
@@ -337,87 +301,82 @@
       
     
     
-    <a href="./" title="Code organization" class="md-nav__link md-nav__link--active">
-      Code organization
+    <a href="./" title="1. Code organization" class="md-nav__link md-nav__link--active">
+      1. Code organization
     </a>
     
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../github/" title="GitHub" class="md-nav__link">
-      GitHub
+    <a href="../github/" title="2. GitHub" class="md-nav__link">
+      2. GitHub
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../python-development/" title="Python development" class="md-nav__link">
-      Python development
+    <a href="../python-development/" title="3. Python development" class="md-nav__link">
+      3. Python development
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../imjoy-development/" title="ImJoy development" class="md-nav__link">
-      ImJoy development
+    <a href="../imjoy-development/" title="4. ImJoy development" class="md-nav__link">
+      4. ImJoy development
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../documentation/" title="Documentation" class="md-nav__link">
-      Documentation
+    <a href="../documentation/" title="5. Documentation" class="md-nav__link">
+      5. Documentation
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../deployment/" title="Deployment" class="md-nav__link">
-      Deployment
+    <a href="../deployment/" title="6. Deployment" class="md-nav__link">
+      6. Deployment
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../distribution/" title="Distribution" class="md-nav__link">
-      Distribution
+    <a href="../distribution/" title="7. Distribution" class="md-nav__link">
+      7. Distribution
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -450,23 +409,35 @@
                 
                 
                 <h1 id="code-organization">Code organization</h1>
-<p>The code of this project will be hosted on GitHub. The different steps described
-in this tutorial will eventually results in this organization.</p>
-<pre><code>.
+<p>To get started, we created the project folder called <code>ImJoy-demo-project</code></p>
+<p>Below we show how this folder was populated during the development described
+in this tutorial. It contains files and folders for GitHub, the documentation,
+and the actual Python and ImJoy code.</p>
+<p>This might look daunting at the beginning, but we will explain in detail
+all steps that eventually results in this organization.</p>
+<div class="codehilite"><pre><span></span>.
 ├─ dev/                        # Folder containing code for development
-│  ├─ blabla.md                   # Jupyter notebook
+│  ├─ dev-calc-sine..ipynb      # Jupyter notebook
+│
 ├─ docs/                        # Folder containing documentation
 │  ├─ blabla.md                   # smFISH image (channel 1)
 │  ├─ assets/                     # Folder containing images of docs
 │  │  ├─ screenshot.png             # Screenshot of plugin
+│
 ├─ imjoy-plugins/               # Folder containing ImJoy plugins
 │  ├─ plugin1.imjoy.html          # ImJoy plugin 1
 │  ├─ plugin2.imjoy.html          # ImJoy plugin 2
-├─ imjoy-plugins/               # Folder web-site of documentation (auto created)
+│
+├─ site/                        # Folder web-site of documentation (auto created)
+│  ├─ ...
+│
+├─ .gitignore                   # File specifying files and folders that are ignored by git
+├─ LICENCE                      # Licence file
 ├─ mkdocs.yaml                  # File defining how documentation is created
+├─ ReadMe.md                    # ReadMe file rendered on GitHub
 ├─ setup.py                     # File containing ....
 .
-</code></pre>
+</pre></div>
                 
                   
                 
@@ -487,7 +458,7 @@ in this tutorial will eventually results in this organization.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../licence/" title="Licence" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -496,19 +467,19 @@ in this tutorial will eventually results in this organization.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Licence
+                Overview
               </span>
             </div>
           </a>
         
         
-          <a href="../github/" title="GitHub" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../github/" title="2. GitHub" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                GitHub
+                2. GitHub
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

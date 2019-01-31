@@ -42,7 +42,7 @@
     
     
       
-        <title>ImJoy development - ImJoy demo plugin</title>
+        <title>4. ImJoy development - ImJoy demo plugin</title>
       
     
     
@@ -130,7 +130,7 @@
                 ImJoy demo plugin
               </span>
               <span class="md-header-nav__topic">
-                ImJoy development
+                4. ImJoy development
               </span>
             
           
@@ -202,16 +202,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Overview" class="md-tabs__link">
+      <a href=".." title="Overview" class="md-tabs__link md-tabs__link--active">
         Overview
       </a>
     
@@ -221,17 +219,16 @@
         
       
         
-  
-  
-    <li class="md-tabs__item">
       
-        <a href="../code-organization/" title="Plugin development" class="md-tabs__link md-tabs__link--active">
-          Plugin development
-        </a>
+        
       
-    </li>
-  
-
+        
+      
+        
+      
+        
+      
+        
       
     </ul>
   </div>
@@ -296,8 +293,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../licence/" title="Licence" class="md-nav__link">
-      Licence
+    <a href="../code-organization/" title="1. Code organization" class="md-nav__link">
+      1. Code organization
     </a>
   </li>
 
@@ -306,62 +303,29 @@
       
       
 
-  
 
+  <li class="md-nav__item">
+    <a href="../github/" title="2. GitHub" class="md-nav__link">
+      2. GitHub
+    </a>
+  </li>
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python-development/" title="3. Python development" class="md-nav__link">
+      3. Python development
+    </a>
+  </li>
+
     
-    <label class="md-nav__link" for="nav-3">
-      Plugin development
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Plugin development
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../code-organization/" title="Code organization" class="md-nav__link">
-      Code organization
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../github/" title="GitHub" class="md-nav__link">
-      GitHub
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../python-development/" title="Python development" class="md-nav__link">
-      Python development
-    </a>
-  </li>
-
-        
-          
-          
-          
+      
+      
+      
 
   
 
@@ -374,11 +338,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        ImJoy development
+        4. ImJoy development
       </label>
     
-    <a href="./" title="ImJoy development" class="md-nav__link md-nav__link--active">
-      ImJoy development
+    <a href="./" title="4. ImJoy development" class="md-nav__link md-nav__link--active">
+      4. ImJoy development
     </a>
     
       
@@ -429,45 +393,40 @@
     
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../documentation/" title="Documentation" class="md-nav__link">
-      Documentation
+    <a href="../documentation/" title="5. Documentation" class="md-nav__link">
+      5. Documentation
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../deployment/" title="Deployment" class="md-nav__link">
-      Deployment
+    <a href="../deployment/" title="6. Deployment" class="md-nav__link">
+      6. Deployment
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../distribution/" title="Distribution" class="md-nav__link">
-      Distribution
+    <a href="../distribution/" title="7. Distribution" class="md-nav__link">
+      7. Distribution
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -540,23 +499,24 @@
 <p>You can then make an ImJoy plugin and choose the appropriate plugin type.</p>
 <h3 id="tag-for-development">Tag for development</h3>
 <p>A very useful features are tags to change how a plugin is executed. Here we use
-  tags to differentiate between a development and stable release version. Importantly,
-  once you plugin is done, you can specify which version should be installed.</p>
+tags to differentiate between a development and stable release version. Importantly,
+once you plugin is done, you can specify which version should be installed.</p>
 <p>in the <config> block, we have this definitions</p>
-<pre><code class="json">&quot;tags&quot;: [&quot;stable&quot;,&quot;dev-local&quot;,&quot;dev-github&quot;]
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;tags&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;stable&quot;</span><span class="p">,</span><span class="s2">&quot;dev-local&quot;</span><span class="p">,</span><span class="s2">&quot;dev-github&quot;</span><span class="p">]</span>
+</pre></div>
+
 
 <h3 id="using-own-module">Using own module</h3>
 <p>During development, we will use our locally stored code. This can be done in the
 <code>&lt;script&gt;</code> block</p>
-<pre><code class="python">if 'dev-local' in api.TAG:
-    import importlib
-    sys.path.insert(0, 'PathToModule')
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="s1">&#39;dev-local&#39;</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">TAG</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">importlib</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;PathToModule&#39;</span><span class="p">)</span>
 
-  import rnaloc
-  importlib.reload(rnaloc)
+  <span class="kn">import</span> <span class="nn">rnaloc</span>
+  <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">rnaloc</span><span class="p">)</span>
+</pre></div>
 
-</code></pre>
 
 <p>Please note the <code>importlib.reload</code> allows to reload the library if you have changes.</p>
 <h3 id="user-interaction">User Interaction</h3>
@@ -589,7 +549,7 @@ name with the name of the plugin, followed by a unique string, and the extension
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../python-development/" title="Python development" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../python-development/" title="3. Python development" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -598,19 +558,19 @@ name with the name of the plugin, followed by a unique string, and the extension
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Python development
+                3. Python development
               </span>
             </div>
           </a>
         
         
-          <a href="../documentation/" title="Documentation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../documentation/" title="5. Documentation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Documentation
+                5. Documentation
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

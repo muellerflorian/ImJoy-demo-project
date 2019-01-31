@@ -219,17 +219,16 @@
         
       
         
-  
-  
-    <li class="md-tabs__item">
       
-        <a href="code-organization/" title="Plugin development" class="md-tabs__link">
-          Plugin development
-        </a>
+        
       
-    </li>
-  
-
+        
+      
+        
+      
+        
+      
+        
       
     </ul>
   </div>
@@ -303,8 +302,8 @@
 
 
   <li class="md-nav__item">
-    <a href="licence/" title="Licence" class="md-nav__link">
-      Licence
+    <a href="code-organization/" title="1. Code organization" class="md-nav__link">
+      1. Code organization
     </a>
   </li>
 
@@ -314,106 +313,70 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
+  <li class="md-nav__item">
+    <a href="github/" title="2. GitHub" class="md-nav__link">
+      2. GitHub
+    </a>
+  </li>
+
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="python-development/" title="3. Python development" class="md-nav__link">
+      3. Python development
+    </a>
+  </li>
+
     
-    <label class="md-nav__link" for="nav-3">
-      Plugin development
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Plugin development
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="code-organization/" title="Code organization" class="md-nav__link">
-      Code organization
+    <a href="imjoy-development/" title="4. ImJoy development" class="md-nav__link">
+      4. ImJoy development
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="github/" title="GitHub" class="md-nav__link">
-      GitHub
+    <a href="documentation/" title="5. Documentation" class="md-nav__link">
+      5. Documentation
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="python-development/" title="Python development" class="md-nav__link">
-      Python development
+    <a href="deployment/" title="6. Deployment" class="md-nav__link">
+      6. Deployment
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="imjoy-development/" title="ImJoy development" class="md-nav__link">
-      ImJoy development
+    <a href="distribution/" title="7. Distribution" class="md-nav__link">
+      7. Distribution
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="documentation/" title="Documentation" class="md-nav__link">
-      Documentation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="deployment/" title="Deployment" class="md-nav__link">
-      Deployment
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="distribution/" title="Distribution" class="md-nav__link">
-      Distribution
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -448,10 +411,16 @@
                 <h1 id="overview">Overview</h1>
 <p>Here we describe the different steps when developing a Python plugin for ImJoy.</p>
 <blockquote>
-<p>We will implement a ImJoy plugin that uses the Python plugin engine to perform some calcutions (Calculate a sine function with a user defined number of data-points). The results will then we plotted in the ImJoy interface. The code is hosted on GitHub,  the plugin is explained in a dedicated documenation, and the plugin code will be distributed with a dedicated ImJoy link. This allows easy installation for the end user.</p>
+<p>We will implement a ImJoy plugin that uses the Python plugin engine to perform some
+calculations (a sine function with a user defined number of data-points).
+The results will then we plotted in the ImJoy interface. The code is hosted on GitHub,<br />
+the plugin is explained in a dedicated documentation, and the plugin code will be
+distributed with a dedicated ImJoy link. This allows easy installation for the end user.</p>
 </blockquote>
+<p>Throughout this tutorial, we will provide <strong>relevant code fragments</strong>, but also link
+the complete files for further inspection. </p>
 <p><strong>Disclaimer 1</strong>: a number of different tools exist for the different steps presented
-here. We focus on the ones that are widely used and easily accesible.</p>
+here. We focus on the ones that are widely used and easily accessible.</p>
 <p><strong>Disclaimer 2</strong>: the implemented computational task is intentionally kept
 very simply to allow focusing on the actual workflow and the different elements.</p>
                 
@@ -475,13 +444,13 @@ very simply to allow focusing on the actual workflow and the different elements.
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="licence/" title="Licence" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="code-organization/" title="1. Code organization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Licence
+                1. Code organization
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -42,7 +42,7 @@
     
     
       
-        <title>Python development - ImJoy demo plugin</title>
+        <title>3. Python development - ImJoy demo plugin</title>
       
     
     
@@ -130,7 +130,7 @@
                 ImJoy demo plugin
               </span>
               <span class="md-header-nav__topic">
-                Python development
+                3. Python development
               </span>
             
           
@@ -202,16 +202,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Overview" class="md-tabs__link">
+      <a href=".." title="Overview" class="md-tabs__link md-tabs__link--active">
         Overview
       </a>
     
@@ -221,17 +219,16 @@
         
       
         
-  
-  
-    <li class="md-tabs__item">
       
-        <a href="../code-organization/" title="Plugin development" class="md-tabs__link md-tabs__link--active">
-          Plugin development
-        </a>
+        
       
-    </li>
-  
-
+        
+      
+        
+      
+        
+      
+        
       
     </ul>
   </div>
@@ -296,8 +293,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../licence/" title="Licence" class="md-nav__link">
-      Licence
+    <a href="../code-organization/" title="1. Code organization" class="md-nav__link">
+      1. Code organization
     </a>
   </li>
 
@@ -305,51 +302,18 @@
       
       
       
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Plugin development
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Plugin development
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
 
 
   <li class="md-nav__item">
-    <a href="../code-organization/" title="Code organization" class="md-nav__link">
-      Code organization
+    <a href="../github/" title="2. GitHub" class="md-nav__link">
+      2. GitHub
     </a>
   </li>
 
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../github/" title="GitHub" class="md-nav__link">
-      GitHub
-    </a>
-  </li>
-
-        
-          
-          
-          
+    
+      
+      
+      
 
   
 
@@ -362,11 +326,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Python development
+        3. Python development
       </label>
     
-    <a href="./" title="Python development" class="md-nav__link md-nav__link--active">
-      Python development
+    <a href="./" title="3. Python development" class="md-nav__link md-nav__link--active">
+      3. Python development
     </a>
     
       
@@ -423,57 +387,52 @@
     
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../imjoy-development/" title="ImJoy development" class="md-nav__link">
-      ImJoy development
+    <a href="../imjoy-development/" title="4. ImJoy development" class="md-nav__link">
+      4. ImJoy development
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../documentation/" title="Documentation" class="md-nav__link">
-      Documentation
+    <a href="../documentation/" title="5. Documentation" class="md-nav__link">
+      5. Documentation
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../deployment/" title="Deployment" class="md-nav__link">
-      Deployment
+    <a href="../deployment/" title="6. Deployment" class="md-nav__link">
+      6. Deployment
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="../distribution/" title="Distribution" class="md-nav__link">
-      Distribution
+    <a href="../distribution/" title="7. Distribution" class="md-nav__link">
+      7. Distribution
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -549,49 +508,60 @@
                 
                 
                 <h1 id="python-code-development">Python code development</h1>
+<p>Here we only provide a brief overview of how Python code could be developed. We use
+these explanation to establish the necessary terminology for the following steps
+in this tutorial.</p>
+<p>Many dedicated resources exist on the web for each of these aspects,
+and we invite the reader to consult these for more detailed information.</p>
 <h2 id="development-environment">Development environment</h2>
 <p>The actual Python code performing the calculation can be implemented, tested,
 and continued to be used outside of ImJoy.</p>
-<p>A simple way to get started in Python is using <a href="https://www.anaconda.com/distribution/">Anaconda</a>. This open source distrubtion comes with many Python packages pre-installed. Further it already contains the development enviornments <strong>Spyder</strong> and <strong>Jupyter Notebook</strong>.</p>
-<p>Here, we use Anaconda (Python 3.6) and <strong>Jupyter Notebook</strong>. In such a notebook,
-you can implement your python code.</p>
-<p>We created a folder with the name of the project, e.g. <code>blablab</code>. In this folder,
-we create a subfolder <code>dev</code> to save the Jupyter notebooks.</p>
-<ul>
-<li>Make notebook for calculations<ul>
-<li>calculate sine function with a user defined number of data-points.</li>
-</ul>
-</li>
-<li>Link it here</li>
-<li>Show screenshot? or code fragment.</li>
-</ul>
+<p>A simple way to get started in Python is using <a href="https://www.anaconda.com/distribution/">Anaconda</a>.
+This open source distribution comes with many Python packages pre-installed.
+Further it already contains the development environments <strong>Spyder</strong> and <strong>Jupyter Notebook</strong>.</p>
+<p>Here, we use Anaconda (Python 3.6) and <strong>Jupyter Notebook</strong>.
+In such a notebook, you can implement and test your Python code.
+To store these notebooks, we create a subfolder <code>dev</code> in the project folder <code>ImJoy-demo-project</code>.</p>
+<p>The notebook <code>dev-calc-sine.ipynb</code> contains the developed code.</p>
+<p><img src="../img/jupyter-screenshot.png" width="350px"></img></p>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/dev/dev-calc-sine.ipynb" target="_blank"> <strong>Full file is here &gt;&gt;</strong></a></p>
 <h2 id="package-code-as-python-model">Package code as Python model</h2>
 <p>Once your code is working, you can package it as a module.</p>
 <p>Python modules are <code>.py</code> files that consist of Python code. They can contain
 definitions of functions, classes, and variables that can then be utilized in
 other Python programs.</p>
 <h3 id="wrap-code-in-functions">Wrap code in functions</h3>
-<p>One thing to keep in mind, is then typically the input of these functions is
+<p>One thing to keep in mind, is that typically the input of these functions is
 generated in your actual ImJoy plugin. For instance, we will ask the user to
 specify the number of data-points that should be calculated.</p>
 <h3 id="make-module">Make module</h3>
-<p>Essentially, we make a file <code>TODO.py</code> that contains the function definitions</p>
-<pre><code class="python"># Define a function
-def world():
-    print(&quot;Hello, World!&quot;)
-</code></pre>
+<p>We will wrap the above code in a function as shown below.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Define a function</span>
+<span class="k">def</span> <span class="nf">calc_sine</span><span class="p">(</span><span class="n">n_points</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="o">/</span><span class="n">n_points</span><span class="p">),</span><span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
 
-<p>This file is saved in the folder <code>PathToModule</code>.  In order to use it, we have to
-this path.</p>
-<pre><code class="python">import sys
-sys.path.insert(0, 'PathToModule')
-</code></pre>
 
-<pre><code class="python"># Import hello module
-import hello
-# Call function
-hello.world()
-</code></pre>
+<p>This function is then saved in a <code>.py</code> file.
+It is good practice to comment your  code, e.g. following the guidelines of <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings">Google</a>. We named this file <code>outils.py</code> and saved in a subfolder <code>pkgcode</code>.</p>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/pkgcode/outils.py" target="_blank"> <strong>Full file is here &gt;&gt;</strong></a></p>
+<p>In order to be able to import this module, we have to update the Python
+sys path. Assuming the we open the Jupyter notebook, we can do this with a relavtive
+path</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../pkgcode&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>We can then import and call the function</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Import outils module</span>
+<span class="kn">import</span> <span class="nn">outils</span>
+
+<span class="c1"># Call function</span>
+<span class="n">outils</span><span class="o">.</span><span class="n">calc_sine</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
                 
                   
                 
@@ -612,7 +582,7 @@ hello.world()
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../github/" title="GitHub" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../github/" title="2. GitHub" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -621,19 +591,19 @@ hello.world()
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                GitHub
+                2. GitHub
               </span>
             </div>
           </a>
         
         
-          <a href="../imjoy-development/" title="ImJoy development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../imjoy-development/" title="4. ImJoy development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ImJoy development
+                4. ImJoy development
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
