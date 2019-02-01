@@ -356,6 +356,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#native-python-plugin" title="Native Python plugin" class="md-nav__link">
+    Native Python plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tag-for-development" title="Tag for development" class="md-nav__link">
     Tag for development
   </a>
@@ -370,15 +377,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-interaction" title="User Interaction" class="md-nav__link">
-    User Interaction
+  <a href="#user-specified-parameters" title="User specified parameters" class="md-nav__link">
+    User specified parameters
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#saving-plugin" title="Saving plugin" class="md-nav__link">
-    Saving plugin
+  <a href="#showing-results-in-imjoy" title="Showing results in ImJoy" class="md-nav__link">
+    Showing results in ImJoy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imjoy-log" title="ImJoy log" class="md-nav__link">
+    ImJoy log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-results" title="Plot results" class="md-nav__link">
+    Plot results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-the-plugin" title="Exporting the plugin" class="md-nav__link">
+    Exporting the plugin
   </a>
   
 </li>
@@ -451,6 +485,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#native-python-plugin" title="Native Python plugin" class="md-nav__link">
+    Native Python plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tag-for-development" title="Tag for development" class="md-nav__link">
     Tag for development
   </a>
@@ -465,15 +506,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-interaction" title="User Interaction" class="md-nav__link">
-    User Interaction
+  <a href="#user-specified-parameters" title="User specified parameters" class="md-nav__link">
+    User specified parameters
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#saving-plugin" title="Saving plugin" class="md-nav__link">
-    Saving plugin
+  <a href="#showing-results-in-imjoy" title="Showing results in ImJoy" class="md-nav__link">
+    Showing results in ImJoy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imjoy-log" title="ImJoy log" class="md-nav__link">
+    ImJoy log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-results" title="Plot results" class="md-nav__link">
+    Plot results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-the-plugin" title="Exporting the plugin" class="md-nav__link">
+    Exporting the plugin
   </a>
   
 </li>
@@ -496,37 +564,76 @@
                 
                 
                 <h1 id="imjoy-plugin-development">ImJoy plugin development</h1>
-<p>You can then start working on your ImJoy plugin and choose the appropriate
-plugin type. For this simple tutorial, we use a <strong>native python</strong> plugin.</p>
-<h3 id="tag-for-development">Tag for development</h3>
-<p>A very useful features are tags to change how a plugin is executed. Here we use
-tags to differentiate between a development and stable release version. Importantly,
-once you plugin is done, you can specify which version should be installed.</p>
-<p>in the <config> block, we have this definitions</p>
+<p>To launch ImJoy, simpy open a browser and open <a href="https://imjoy.io">https://imjoy.io</a>.
+You can then either check of some of the ImJoy plugins, or start working on your plugin.</p>
+<h2 id="native-python-plugin">Native Python plugin</h2>
+<p>For this simple tutorial, we create a <strong>native python</strong> plugin, which we called <code>Sine Calculator</code>.
+You can add a plugin template with the <code>+ PLUGINS</code> button.</p>
+<p>However, this plugin type requires the plugin engine. Yo can find a dedicate section
+in the ImJoy user manual for how to install the engine with this
+<a href="https://imjoy.io/docs/#/user_manual?id=imjoy-app-and-plugin-engine">link</a>.</p>
+<p>Once you have the engine running and connected to ImJoy, you can save and execute
+your plugins. The first step is to fill out some fields of the <code>&lt;config&gt;</code> block. To get started,
+we name the plugin (<code>name</code>) and give a short description (<code>description</code>).</p>
+<p>We can then save the plugin from its toolbar. Once save the plugin will show up with its
+name in the plugin interface, and have a little rocket 🚀 next to its name. This indicates
+that the plugin is powered by the plugin engine. Pressing on its name will run it,
+for the template plugin it will simply show <code>Hello world</code> in the plugin engine.</p>
+<p><img src="../img/screenshot-plugin-menu.png" width="400px"></img></p>
+<h2 id="tag-for-development">Tag for development</h2>
+<p>A very useful features are <code>tags</code> to change how a plugin is executed. Here we use
+tags to differentiate between a development and stable release version. For this,
+we add the following definition to the <config> block where we have three different
+tags:</p>
 <div class="codehilite"><pre><span></span><span class="s2">&quot;tags&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;stable&quot;</span><span class="p">,</span><span class="s2">&quot;dev-local&quot;</span><span class="p">,</span><span class="s2">&quot;dev-github&quot;</span><span class="p">]</span>
 </pre></div>
 
 
-<h3 id="using-own-module">Using own module</h3>
+<p>When you save your plugin, these tags will show up in the bar of the code editor.
+For the next steps, select <code>dev-local</code>.</p>
+<p><strong>Further information</strong></p>
+<p>More information on tags can be found <a href="https://imjoy.io/docs/#/development?id=tags">here</a></p>
+<h2 id="using-own-module">Using own module</h2>
 <p>During development, we will use our locally stored module.
 This can be done in the <code>&lt;script&gt;</code> block. Here we have to add the
-absolute path of the module <code>PathToModule</code> to the Python system path.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="s1">&#39;dev-local&#39;</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">TAG</span><span class="p">:</span>
+absolute path of the module <code>PathToModule</code> to the Python system path.
+Please note the <code>importlib.reload</code> allows to reload the library if you have changes.</p>
+<div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;python&quot;</span><span class="o">&gt;</span>
+
+<span class="k">if</span> <span class="s1">&#39;dev-local&#39;</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">TAG</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">importlib</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
     <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;PathToModule&#39;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">outils</span>
+    <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">outils</span><span class="p">)</span>
 
-  <span class="kn">import</span> <span class="nn">outils</span>
-  <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">outils</span><span class="p">)</span>
+<span class="o">...</span>
+
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 </pre></div>
 
 
-<p>Please note the <code>importlib.reload</code> allows to reload the library if you have changes.</p>
-<p>we can then use the module</p>
-<div class="codehilite"><pre><span></span><span class="n">outils</span><span class="o">.</span><span class="n">calc_sine</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<p>We can then use this module in our Python code.</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">class</span> <span class="nc">ImJoyPlugin</span><span class="p">():</span>
+
+    <span class="c1"># Run upon plugin execution</span>
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">my</span><span class="p">):</span>
+       <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">outils</span><span class="o">.</span><span class="n">calc_sine</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+       <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;x values: {x}&#39;</span><span class="p">)</span>
+       <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;y values: {y}&#39;</span><span class="p">)</span>
 </pre></div>
 
 
-<h3 id="user-interaction">User Interaction</h3>
+<p>When running the plugin, the calculated vectors will be shown in the Python plugin engine.</p>
+<p><strong>Note 1</strong>: that the engine does not support any graphics. We will show you how
+to plot the data further down.</p>
+<p><strong>Note 2</strong>: the <code>import asyncio</code> and <code>async def</code> code segments are use to declare
+permit asynchronous programming. This is allows to some of the core API function
+of ImJoy with an easy syntax. For more details see <a href="https://imjoy.io/docs/#/api?id=asynchronous-programming">here</a>.</p>
+<h2 id="user-specified-parameters">User specified parameters</h2>
 <p>For our example, the user has to specify how many data-points should be calculated.
 The easiest way to obtain user input is by using the plugin user interface.
 This can be done with the <code>ui</code> string the the <code>&lt;config</code> block.</p>
@@ -534,13 +641,138 @@ This can be done with the <code>ui</code> string the the <code>&lt;config</code>
 </pre></div>
 
 
-<p>For more infos, see [here](https://imjoy.io/docs/#/development?id=ui].</p>
-<p>For more advanced interfaces, you can use a <code>window</code> plugin that allows you
-to design an interface with HTML. We more information we refer to a dedicated <a href="[TODO link]">demo</a></p>
-<h3 id="saving-plugin">Saving plugin</h3>
+<p>After saving the plugin, it has now a little menu that you can show by pressing
+on the arrow down symbol next to its name.</p>
+<p><img src="../img/screenshot-plugin-interface.png" width="400px"></img></p>
+<p>Each parameter that you specify in such an interface, can be retrieved by its
+unique <code>id</code> from the object <code>my</code>, e.g. <code>my.config.n_points</code> for our example. To now
+perform the calculations with the user specified number of points, simply use</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">outils</span><span class="o">.</span><span class="n">calc_sine</span><span class="p">(</span><span class="n">my</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">n_points</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>Further information</strong></p>
+<ul>
+<li>For more infos on the <code>ui</code> string, see <a href="https://imjoy.io/docs/#/development?id=ui">here</a>.</li>
+<li>For more advanced interfaces, you can use a <code>window</code> plugin that allows you
+   to design an interface with HTML. We more information we refer to a dedicated
+   <a href="https://imjoy.io/docs/#/demos?id=user-interface-calling-python-worker">demo</a>.</li>
+</ul>
+<h2 id="showing-results-in-imjoy">Showing results in ImJoy</h2>
+<p>This plugin is executed in the plugin engine, where we used <code>print</code> to show
+some results. However, we would like to show plots and more detailed feedback
+directly in the ImJoy app. For this, ImJoy provides a number of dedicated
+<a href="https://imjoy.io/docs/#/api?id=api-functions"><strong>API functions</strong></a>.</p>
+<h3 id="imjoy-log">ImJoy log</h3>
+<p>For example, we could replace the <code>print</code> statements with the api function <code>api.log</code>.</p>
+<div class="codehilite"><pre><span></span><span class="n">api</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;y values: {y}&#39;</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;y values: {y}&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>This then shows the results in the plugin specif log. This log can be opened by
+clicking on the grey inverted exclamation mark next to the plugin name. Note that
+this log can be cleared and exported.</p>
+<p><img src="../img/screenshot-plugin-log.png" width="400px"></img></p>
+<h3 id="plot-results">Plot results</h3>
+<p>The undoubtedly best way to show these data is with a plot.</p>
+<p>In order to do this, we require a second plugin, this time a <code>window</code> plugin,
+which will display data it receives. We use HTML to determine how the plugin
+looks like, and JavaScript how the window plugin show process received data.
+An excellent introduction to HTML, JavaScript with hands-on example is <a href="https://www.w3schools.com/">w3schools.com/</a>.</p>
+<p>We create a template window plugin, and name it <code>Charts JS</code>. You can find the
+<a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html" target="_blank"> <strong>full  here &gt;&gt;</strong></a>,
+and we will referenc specific sections throughout the explanations here.</p>
+<p>This plugin is only useful when called from another plugin, which can be specified
+in the <code>&lt;config&gt;</code> block. Such a <strong>"helper" plugin</strong> will show up in the plugin window, but
+it will be grayed out and can't be run by clicking on its name.</p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;runnable&quot;</span><span class="err">:</span> <span class="kc">false</span>
+</pre></div>
+
+
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html#L20" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p>Many JavaScript libraries permit interactive plotting of data. Here, we used
+<a href="https://plot.ly/javascript/"><strong>Plotly.js</strong></a>, a very rich library for interactive
+data visualization. To use this library, you have to specify
+it in the requirements</p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;requirements&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;https://cdn.plot.ly/plotly-latest.min.js&quot;</span><span class="p">]</span>
+</pre></div>
+
+
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/ChartsJS.imjoy.html#L20" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p><strong>Ploty show its plots</strong> in so called HTML division <code>&lt;div&gt;. We can add such a
+division to the</code><window><code>block of the plugin, and give it the id</code>chart`.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">window</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;chart&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">window</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html#L55" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p>Then we have to tell the plugin how to <strong>display data it received</strong>. If an ImJoy plugin
+is called by another plugin, it can receive data in the <code>my.data</code> object in its run function.
+In this run function, we the simply create the variables that are needed by Plotly
+to show data. We determine:
+1.  Where we should plot: the <code>&lt;div&gt;</code> element naed <code>chart</code>
+0.  What and how we should plot: the <code>x</code>, and <code>y</code> data, the plot type and the
+marker size. In the actual Plotly call we</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Call plotly</span>
+<span class="kd">var</span> <span class="nx">myPlot</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;chart&#39;</span><span class="p">),</span>
+    <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span>  <span class="nx">x</span><span class="o">:</span><span class="nx">my</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span>
+                <span class="nx">y</span><span class="o">:</span><span class="nx">my</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span>
+                <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span>
+                <span class="nx">mode</span><span class="o">:</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+                <span class="nx">marker</span><span class="o">:</span><span class="p">{</span><span class="nx">size</span><span class="o">:</span><span class="mi">5</span><span class="p">}</span> <span class="p">}</span> <span class="p">],</span>
+    <span class="nx">layout</span> <span class="o">=</span> <span class="p">{</span> <span class="p">};</span>
+
+<span class="nx">Plotly</span><span class="p">.</span><span class="nx">newPlot</span><span class="p">(</span><span class="s1">&#39;chart&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">layout</span><span class="p">,{</span><span class="nx">responsive</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+</pre></div>
+
+
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html#L45" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p>The last step is then you call this new plugin from within our native pyton plugin.
+This can be done wiht the api function <code>api.createWindow</code>. We create first a
+dictionary containing the data we would like to send to the window plugin. This contains
+also other required fields</p>
+<ul>
+<li><code>name</code>: is the title of the window that will be created</li>
+<li><code>type</code>: this is the name of the window plugin, we would like to call, e.g. <code>Charts JS</code> in our example</li>
+<li><code>w</code>, <code>h</code>: window width, and height</li>
+<li><code>data</code>: containing the actual <code>x</code> and <code>y</code> values. Please note that numpy arrays
+          are not supported and have to be converted to lists.</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">data_plot</span> <span class="o">=</span> <span class="p">{</span>   <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Plot charts - with JavaScript&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;Charts JS&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;w&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:{</span>
+                    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+                    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+<span class="n">await</span> <span class="n">api</span><span class="o">.</span><span class="n">createWindow</span><span class="p">(</span><span class="n">data_plot</span><span class="p">)</span>
+</pre></div>
+
+
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Sine Calculator.imjoy.html#L62" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p>When you now run the plugin, it will show a window with the calculated curve.</p>
+<p><img src="../img/screenshot-plugin-plot.png" width="400px"></img></p>
+<p><strong>Further information</strong></p>
+<ul>
+<li>For more infos on <code>api.createWindow</code> string, see <a href="https://imjoy.io/docs/#/api?id=apicreatewindow">here</a>.</li>
+<li>For a more detailed information about how to plot data in JavaScript and how to
+   refresh the window we refer this <a href="https://imjoy.io/docs/#/demos?id=python-plugin-displaying-a-chart">demo</a>.</li>
+</ul>
+<h2 id="exporting-the-plugin">Exporting the plugin</h2>
 <p>You can then download the plugin code from the editor. This will download a file
 name with the name of the plugin, followed by a unique string, and the extension <code>.imjoy.html</code>.</p>
-<p>We save it without the unique string in the folder <code>imjoy-plugin</code></p>
+<p>We saved the two plugins it without the unique string in the folder <code>imjoy-plugin</code></p>
+<ul>
+<li><code>Sine Calculator.imjoy.html</code>: to perform calcuations.</li>
+<li><code>Charts JS.imjoy.html</code>: to display the data.</li>
+</ul>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/tree/master/imjoy-plugins" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
                 
                   
                 
