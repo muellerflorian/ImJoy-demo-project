@@ -681,7 +681,7 @@ which will display data it receives. We use HTML to determine how the plugin
 looks like, and JavaScript how the window plugin show process received data.
 An excellent introduction to HTML, JavaScript with hands-on example is <a href="https://www.w3schools.com/">w3schools.com/</a>.</p>
 <p>We create a template window plugin, and name it <code>Charts JS</code>. You can find the
-<a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html" target="_blank"> <strong>full  here &gt;&gt;</strong></a>,
+<a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts%20JS.imjoy.html" target="_blank"> <strong>full  here &gt;&gt;</strong></a>,
 and we will referenc specific sections throughout the explanations here.</p>
 <p>This plugin is only useful when called from another plugin, which can be specified
 in the <code>&lt;config&gt;</code> block. Such a <strong>"helper" plugin</strong> will show up in the plugin window, but
@@ -690,7 +690,7 @@ it will be grayed out and can't be run by clicking on its name.</p>
 </pre></div>
 
 
-<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html#L20" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts%20JS.imjoy.html#L20" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
 <p>Many JavaScript libraries permit interactive plotting of data. Here, we used
 <a href="https://plot.ly/javascript/"><strong>Plotly.js</strong></a>, a very rich library for interactive
 data visualization. To use this library, you have to specify
@@ -699,7 +699,7 @@ it in the requirements</p>
 </pre></div>
 
 
-<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/ChartsJS.imjoy.html#L20" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts%20JS.imjoy.html#L20" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
 <p><strong>Ploty show its plots</strong> in so called HTML division <code>&lt;div&gt;. We can add such a
 division to the</code><window><code>block of the plugin, and give it the id</code>chart`.</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">window</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">&gt;</span>
@@ -710,7 +710,7 @@ division to the</code><window><code>block of the plugin, and give it the id</cod
 </pre></div>
 
 
-<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html#L55" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts%20JS.imjoy.html#L55" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
 <p>Then we have to tell the plugin how to <strong>display data it received</strong>. If an ImJoy plugin
 is called by another plugin, it can receive data in the <code>my.data</code> object in its run function.
 In this run function, we the simply create the variables that are needed by Plotly
@@ -731,7 +731,7 @@ marker size. In the actual Plotly call we</p>
 </pre></div>
 
 
-<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts JS.imjoy.html#L45" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Charts%20JS.imjoy.html#L45" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
 <p>The last step is then you call this new plugin from within our native pyton plugin.
 This can be done wiht the api function <code>api.createWindow</code>. We create first a
 dictionary containing the data we would like to send to the window plugin. This contains
@@ -755,7 +755,7 @@ also other required fields</p>
 </pre></div>
 
 
-<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Sine Calculator.imjoy.html#L62" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
+<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Sine%20Calculator.imjoy.html#L62" target="_blank"> <strong>See here &gt;&gt;</strong></a></p>
 <p>When you now run the plugin, it will show a window with the calculated curve.</p>
 <p><img src="../img/screenshot-plugin-plot.png" width="400px"></img></p>
 <p><strong>Further information</strong></p>
