@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="An ImJoy plugin to illustrate how to create such plugins">
+        <meta name="description" content="Demonstrating how to create an ImJoy project">
       
       
         <link rel="canonical" href="https://muellerflorian.github.io/rna-loc/">
@@ -42,7 +42,7 @@
     
     
       
-        <title>ImJoy demo plugin</title>
+        <title>ImJoy demo project</title>
       
     
     
@@ -113,7 +113,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://muellerflorian.github.io/rna-loc/" title="ImJoy demo plugin" class="md-header-nav__button md-logo">
+        <a href="https://muellerflorian.github.io/rna-loc/" title="ImJoy demo project" class="md-header-nav__button md-logo">
           
             <i class="md-icon">wb_sunny</i>
           
@@ -127,7 +127,7 @@
           
             
               <span class="md-header-nav__topic">
-                ImJoy demo plugin
+                ImJoy demo project
               </span>
               <span class="md-header-nav__topic">
                 Overview
@@ -243,12 +243,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://muellerflorian.github.io/rna-loc/" title="ImJoy demo plugin" class="md-nav__button md-logo">
+    <a href="https://muellerflorian.github.io/rna-loc/" title="ImJoy demo project" class="md-nav__button md-logo">
       
         <i class="md-icon">wb_sunny</i>
       
     </a>
-    ImJoy demo plugin
+    ImJoy demo project
   </label>
   
     <div class="md-nav__source">
@@ -409,18 +409,21 @@
                 
                 
                 <h1 id="overview">Overview</h1>
-<p>Here we describe the different steps when developing a Python plugin for ImJoy.</p>
+<p>Here we describe the different steps when developing a Python plugin for ImJoy.
+The scope of this tutorial is not to provide a complete guide for software engineering,
+but to illustrate some of the important concepts to consider when developing
+an ImJoy plugin from scratch.</p>
 <blockquote>
 <p>We will implement a ImJoy plugin that uses the Python plugin engine to perform some
 calculations (a sine function with a user defined number of data-points).
-The results will then we plotted in the ImJoy interface. The code is hosted on GitHub,<br />
+The results will then we plotted in the ImJoy interface. The code is hosted on GitHub,
 the plugin is explained in a dedicated documentation, and the plugin code will be
 distributed with a dedicated ImJoy link. This allows easy installation for the end user.</p>
 </blockquote>
 <p>Throughout this tutorial, we will provide <strong>relevant code fragments</strong>, but also link
-the complete files for further inspection. </p>
+the complete files for further inspection.</p>
 <p><strong>Disclaimer 1</strong>: a number of different tools exist for the different steps presented
-here. We focus on the ones that are widely used and easily accessible.</p>
+here. We focus on tools that are widely used and easily accessible.</p>
 <p><strong>Disclaimer 2</strong>: the implemented computational task is intentionally kept
 very simply to allow focusing on the actual workflow and the different elements.</p>
                 
