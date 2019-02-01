@@ -548,8 +548,8 @@ specify the number of data-points that should be calculated.</p>
 It is good practice to comment your  code, e.g. following the guidelines of <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings">Google</a>. We named this file <code>outils.py</code> and saved in a subfolder <code>pkgcode</code>.</p>
 <p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/pkgcode/outils.py" target="_blank"> <strong>Full file is here &gt;&gt;</strong></a></p>
 <p>In order to be able to import this module, we have to update the Python
-sys path. Assuming the we open the Jupyter notebook, we can do this with a relavtive
-path</p>
+sys path. Assuming the we open the Jupyter notebook, we can do this with a
+relavtive path, but an absolute path will work as well.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../pkgcode&#39;</span><span class="p">)</span>
 </pre></div>
