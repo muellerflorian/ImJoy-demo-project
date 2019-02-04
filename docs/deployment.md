@@ -88,7 +88,7 @@ i.e. for the tag `stable`
 
 !!! note "<a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Sine%20Calculator.imjoy.html#L24" target="_blank"> **Sine Calculator.imjoy.html**</a>"
     ```json
-    "requirements": { "stable": ["pip:git+https://github.com/muellerflorian/ImJoy-demo-project@9cb903361d7e0fa70d6b560706201b16c83361af#egg=ImJoy-demo-project"]}
+    "requirements": { "stable": ["pip:git+https://github.com/muellerflorian/ImJoy-demo-project@1a6bce14eb512e1414de2c7cc9eec9da1fee8ce7#egg=ImJoy-demo-project"]}
     ```
 
 The general syntax of such a requirement is
