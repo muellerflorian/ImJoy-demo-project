@@ -42,7 +42,7 @@
     
     
       
-        <title>3. Python development - ImJoy demo project</title>
+        <title>4. Python development - ImJoy demo project</title>
       
     
     
@@ -130,7 +130,7 @@
                 ImJoy demo project
               </span>
               <span class="md-header-nav__topic">
-                3. Python development
+                4. Python development
               </span>
             
           
@@ -315,6 +315,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../documentation/" title="3. Documentation" class="md-nav__link">
+      3. Documentation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -326,11 +338,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        3. Python development
+        4. Python development
       </label>
     
-    <a href="./" title="3. Python development" class="md-nav__link md-nav__link--active">
-      3. Python development
+    <a href="./" title="4. Python development" class="md-nav__link md-nav__link--active">
+      4. Python development
     </a>
     
       
@@ -394,20 +406,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../imjoy-development/" title="4. ImJoy development" class="md-nav__link">
-      4. ImJoy development
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../documentation/" title="5. Documentation" class="md-nav__link">
-      5. Documentation
+    <a href="../imjoy-development/" title="5. ImJoy development" class="md-nav__link">
+      5. ImJoy development
     </a>
   </li>
 
@@ -507,13 +507,13 @@
               
                 
                 
-                <h1 id="python-code-development">Python code development</h1>
+                <h1 id="python-code-development">Python code development<a class="headerlink" href="#python-code-development" title="Permanent link">&para;</a></h1>
 <p>Here we only provide a brief overview of how Python code could be developed. We use
 these explanation to establish the necessary terminology for the following steps
 in this tutorial.</p>
 <p>Many dedicated resources exist on the web for each of these aspects,
 and we invite the reader to consult these for more detailed information.</p>
-<h2 id="development-environment">Development environment</h2>
+<h2 id="development-environment">Development environment<a class="headerlink" href="#development-environment" title="Permanent link">&para;</a></h2>
 <p>The actual Python code performing the calculation can be implemented, tested,
 and continued to be used outside of ImJoy.</p>
 <p>A simple way to get started in Python is using <a href="https://www.anaconda.com/distribution/">Anaconda</a>.
@@ -525,17 +525,20 @@ To store these notebooks, we create a subfolder <code>dev</code> in the project 
 <p>The notebook <code>dev-calc-sine.ipynb</code> contains the developed code.</p>
 <p><img src="../img/screenshot-jupyter.png" width="500px"></img></p>
 <p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/dev/dev-calc-sine.ipynb" target="_blank"> <strong>Full file is here &gt;&gt;</strong></a></p>
-<h2 id="package-code-as-python-module">Package code as Python module</h2>
+<h2 id="package-code-as-python-module">Package code as Python module<a class="headerlink" href="#package-code-as-python-module" title="Permanent link">&para;</a></h2>
 <p>Once your code is working, you can package it as a module.</p>
 <p>Python modules are <code>.py</code> files that consist of Python code. They can contain
-definitions of functions, classes, and variables that can then be utilized in
+definitions of functions, classes, and variables that can then be used in
 other Python programs.</p>
-<h3 id="wrap-code-in-functions">Wrap code in functions</h3>
+<h3 id="wrap-code-in-functions">Wrap code in functions<a class="headerlink" href="#wrap-code-in-functions" title="Permanent link">&para;</a></h3>
 <p>One thing to keep in mind, is that typically the input of these functions is
 generated in your actual ImJoy plugin. For instance, we will ask the user to
 specify the number of data-points that should be calculated.</p>
-<h3 id="make-module">Make module</h3>
-<p>We will wrap the above code in a function as shown below.</p>
+<h3 id="make-module">Make module<a class="headerlink" href="#make-module" title="Permanent link">&para;</a></h3>
+<p>We will wrap the above code in a function as shown below. This function is then
+saved in a <code>.py</code> file (<code>outils.py</code> in the subfolder <code>pkgcode</code>).</p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/pkgcode/outils.py#L21" target="_blank"> <strong>outils.py</strong></a></p>
 <div class="codehilite"><pre><span></span><span class="c1"># Define a function</span>
 <span class="k">def</span> <span class="nf">calc_sine</span><span class="p">(</span><span class="n">n_points</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="o">/</span><span class="n">n_points</span><span class="p">),</span><span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -543,25 +546,22 @@ specify the number of data-points that should be calculated.</p>
     <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 </pre></div>
 
-
-<p>This function is then saved in a <code>.py</code> file.
-It is good practice to comment your  code, e.g. following the guidelines of <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings">Google</a>. We named this file <code>outils.py</code> and saved in a subfolder <code>pkgcode</code>.</p>
-<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/pkgcode/outils.py" target="_blank"> <strong>Full file is here &gt;&gt;</strong></a></p>
-<p>In order to be able to import this module, we have to update the Python
-sys path. Assuming the we open the Jupyter notebook, we can do this with a
-relavtive path, but an absolute path will work as well.</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+</div>
+<p>It is good practice to comment your  code, e.g. following the guidelines of
+<a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings">Google</a>.</p>
+<p>In order to be able to import this module, we have to <strong>update the Python
+sys path</strong>. Assuming the we open the Jupyter notebook, we can do this with a
+relative path, but an absolute path will work as well.
+<div class="codehilite"><pre><span></span><span class="c1"># Update system path</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../pkgcode&#39;</span><span class="p">)</span>
-</pre></div>
 
-
-<p>We can then import and call the function</p>
-<div class="codehilite"><pre><span></span><span class="c1"># Import outils module</span>
+<span class="c1"># Import outils module</span>
 <span class="kn">import</span> <span class="nn">outils</span>
 
 <span class="c1"># Call function</span>
 <span class="n">outils</span><span class="o">.</span><span class="n">calc_sine</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-</pre></div>
+</pre></div></p>
                 
                   
                 
@@ -582,7 +582,7 @@ relavtive path, but an absolute path will work as well.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../github/" title="2. GitHub" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../documentation/" title="3. Documentation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -591,19 +591,19 @@ relavtive path, but an absolute path will work as well.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                2. GitHub
+                3. Documentation
               </span>
             </div>
           </a>
         
         
-          <a href="../imjoy-development/" title="4. ImJoy development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../imjoy-development/" title="5. ImJoy development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                4. ImJoy development
+                5. ImJoy development
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

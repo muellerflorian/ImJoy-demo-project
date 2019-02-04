@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://muellerflorian.github.io/ImJoy-demo-project/</loc>
-     <lastmod>2019-02-01</lastmod>
+     <lastmod>2019-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://muellerflorian.github.io/ImJoy-demo-project/code-organization/</loc>
-     <lastmod>2019-02-01</lastmod>
+     <lastmod>2019-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://muellerflorian.github.io/ImJoy-demo-project/github/</loc>
-     <lastmod>2019-02-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://muellerflorian.github.io/ImJoy-demo-project/python-development/</loc>
-     <lastmod>2019-02-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://muellerflorian.github.io/ImJoy-demo-project/imjoy-development/</loc>
-     <lastmod>2019-02-01</lastmod>
+     <lastmod>2019-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://muellerflorian.github.io/ImJoy-demo-project/documentation/</loc>
-     <lastmod>2019-02-01</lastmod>
+     <lastmod>2019-02-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://muellerflorian.github.io/ImJoy-demo-project/python-development/</loc>
+     <lastmod>2019-02-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://muellerflorian.github.io/ImJoy-demo-project/imjoy-development/</loc>
+     <lastmod>2019-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://muellerflorian.github.io/ImJoy-demo-project/deployment/</loc>
-     <lastmod>2019-02-01</lastmod>
+     <lastmod>2019-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://muellerflorian.github.io/ImJoy-demo-project/distribution/</loc>
-     <lastmod>2019-02-01</lastmod>
+     <lastmod>2019-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -42,7 +42,7 @@
     
     
       
-        <title>5. Documentation - ImJoy demo project</title>
+        <title>3. Documentation - ImJoy demo project</title>
       
     
     
@@ -130,7 +130,7 @@
                 ImJoy demo project
               </span>
               <span class="md-header-nav__topic">
-                5. Documentation
+                3. Documentation
               </span>
             
           
@@ -315,30 +315,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../python-development/" title="3. Python development" class="md-nav__link">
-      3. Python development
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../imjoy-development/" title="4. ImJoy development" class="md-nav__link">
-      4. ImJoy development
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -350,11 +326,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        5. Documentation
+        3. Documentation
       </label>
     
-    <a href="./" title="5. Documentation" class="md-nav__link md-nav__link--active">
-      5. Documentation
+    <a href="./" title="3. Documentation" class="md-nav__link md-nav__link--active">
+      3. Documentation
     </a>
     
       
@@ -396,6 +372,30 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python-development/" title="4. Python development" class="md-nav__link">
+      4. Python development
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../imjoy-development/" title="5. ImJoy development" class="md-nav__link">
+      5. ImJoy development
+    </a>
   </li>
 
     
@@ -481,36 +481,37 @@
               
                 
                 
-                <h1 id="documentation">Documentation</h1>
+                <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
 <p>User manual are invaluable for the user to be able to correctly use the code.
-A widely used format to write such documentations is Markdown. This is a simple language for highlighting.
-As an example, see the Markdown file of this
+A widely used format to write such documentations is Markdown, which is
+plain text language that allows formatting.</p>
+<p>As an example, see the Markdown file of this
 <a href="(https://raw.githubusercontent.com/muellerflorian/ImJoy-demo-project/master/docs/documentation.md" target="_blank"> page</a>.
 For a introduction to Markdown see <a href="https://guides.github.com/features/mastering-markdown/">here</a>.</p>
 <p>Documentation can be as simple as a <code>ReadMe.md</code> in the root directory that will be
 rendered on the GitHub repository page.</p>
-<p>You can also create more advanced documentations. Here many excellent tools exist.
-An easy tool to get started is <a href="https://www.mkdocs.org/">MkDocs</a>. This documentation
-is generated with MkDocs</p>
-<h3 id="installing-mkdocs">Installing MkDocs</h3>
+<p>You can also create <strong>more advanced documentations</strong>. Many excellent tools exist that
+automatically create documentation froma  set of markdown files. An easy tool to get
+started is <a href="https://www.mkdocs.org/">MkDocs</a>. For instance, we created this documentation
+with MkDocs.</p>
+<h3 id="installing-mkdocs">Installing MkDocs<a class="headerlink" href="#installing-mkdocs" title="Permanent link">&para;</a></h3>
 <p>If you already have Anaconda, it is easy to get started.</p>
-<p>First, you have to install MkDocs. Open a Anaconda terminal and type</p>
+<p>First, you have to install MkDocs. Open an Anaconda terminal and type</p>
 <div class="codehilite"><pre><span></span>pip install mkdocs
 </pre></div>
-
 
 <p>We used a special theme <a href="https://squidfunk.github.io/mkdocs-material/">Material for mkdocs</a>,
 which can be installed with:</p>
 <div class="codehilite"><pre><span></span>pip install mkdocs-material
 </pre></div>
 
-
-<h3 id="writing-a-documentation">Writing a documentation</h3>
+<p>This package allows to integrate a number of extensions, for advanced formatting
+of the documentation, for more information see <a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">here</a>.</p>
+<h3 id="writing-a-documentation">Writing a documentation<a class="headerlink" href="#writing-a-documentation" title="Permanent link">&para;</a></h3>
 <p>To initialize the documentation, go to folder containing the project folder
 (<code>ImJoy-demo-project</code> in our case). Open an Anaconda terminal and run</p>
 <div class="codehilite"><pre><span></span>mkdocs new ImJoy-demo-project
 </pre></div>
-
 
 <p>This will then create two files:</p>
 <ul>
@@ -521,26 +522,21 @@ which can be installed with:</p>
 MkDocs provides a developmental server that you can use to check on your computer
 how the documentation web site will look like. For this, open an Anaconda terminal
 in your project folder and run</p>
-<div class="codehilite"><pre><span></span>mkdocs serve
+<p><div class="codehilite"><pre><span></span>mkdocs serve
 </pre></div>
-
-
-<p>The website will then be available at <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
+The website will then be available at <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
 <p>The <code>mkdocs.yml</code> file determines how your documentation is organized and looks
 like. We invite you to consult the excellent documentations of <a href="https://www.mkdocs.org/">MkDocs</a>
 and [Material for mkdocs](https://squidfunk.github.io/mkdocs-material/ for more details.</p>
-<h3 id="deploying-your-documentation">Deploying your documentation</h3>
+<h3 id="deploying-your-documentation">Deploying your documentation<a class="headerlink" href="#deploying-your-documentation" title="Permanent link">&para;</a></h3>
 <p>Once the documentation is finished, you can build the website with</p>
-<div class="codehilite"><pre><span></span>mkdocs build
+<p><div class="codehilite"><pre><span></span>mkdocs build
 </pre></div>
-
-
-<p>This will build the static website containing the documentation, which is stored
+This will build the static website containing the documentation, which is stored
 in the newly created subfolder <code>site</code>. You can then automatically deploy this site
 to  GitHub pages.</p>
 <div class="codehilite"><pre><span></span>mkdocs gh-deploy --clean --force
 </pre></div>
-
 
 <p>This will create a separate branch <code>gh-pages</code> on your GitHub repository dedicated
 to the documentation. GitHub will then automatically build the website with the
@@ -568,7 +564,7 @@ steps to build and deploy your documentation.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../imjoy-development/" title="4. ImJoy development" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../github/" title="2. GitHub" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -577,19 +573,19 @@ steps to build and deploy your documentation.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                4. ImJoy development
+                2. GitHub
               </span>
             </div>
           </a>
         
         
-          <a href="../deployment/" title="6. Deployment" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../python-development/" title="4. Python development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                6. Deployment
+                4. Python development
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
