@@ -325,52 +325,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        3. Documentation
-      </label>
-    
     <a href="./" title="3. Documentation" class="md-nav__link md-nav__link--active">
       3. Documentation
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installing-mkdocs" title="Installing MkDocs" class="md-nav__link">
-    Installing MkDocs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#writing-a-documentation" title="Writing a documentation" class="md-nav__link">
-    Writing a documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-your-documentation" title="Deploying your documentation" class="md-nav__link">
-    Deploying your documentation
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -440,36 +397,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installing-mkdocs" title="Installing MkDocs" class="md-nav__link">
-    Installing MkDocs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#writing-a-documentation" title="Writing a documentation" class="md-nav__link">
-    Writing a documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-your-documentation" title="Deploying your documentation" class="md-nav__link">
-    Deploying your documentation
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -484,31 +411,52 @@
                 <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
 <p>User manual are invaluable for the user to be able to correctly use the code.
 A widely used format to write such documentations is Markdown, which is
-plain text language that allows formatting.</p>
-<p>As an example, see the Markdown file of this
-<a href="(https://raw.githubusercontent.com/muellerflorian/ImJoy-demo-project/master/docs/documentation.md" target="_blank"> page</a>.
-For a introduction to Markdown see <a href="https://guides.github.com/features/mastering-markdown/">here</a>.</p>
+plain text language that allows formatting of documents. A introduction to Markdown
+can be found <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">here</a>.</p>
+<p>For instance, the segment below</p>
+<div class="codehilite"><pre><span></span># Define a title
++ first bullet item
++ second bullet item
+
+some `inline code fragment` and a [link to ImJoy](https://imjoy.io/#/)
+</pre></div>
+
+<p>will yield this text</p>
+<div class="admonition note">
+<p class="admonition-title">Output</p>
+<h1 id="define-a-title">Define a title<a class="headerlink" href="#define-a-title" title="Permanent link">&para;</a></h1>
+<ul>
+<li>first bullet item</li>
+<li>second bullet item</li>
+</ul>
+<p>some <code>inline code fragment</code> and a <a href="https://imjoy.io/#/">link to ImJoy</a></p>
+</div>
+<p>As another example, see the Markdown file of this <a href="https://raw.githubusercontent.com/muellerflorian/ImJoy-demo-project/master/docs/documentation.md" target="_blank"> page</a>.</p>
 <p>Documentation can be as simple as a <code>ReadMe.md</code> in the root directory that will be
-rendered on the GitHub repository page.</p>
+rendered on the GitHub repository page. You can also add a Wiki, as explained
+<a href="https://guides.github.com/features/wikis/" target="_blank"> here</a>.</p>
 <p>You can also create <strong>more advanced documentations</strong>. Many excellent tools exist that
-automatically create documentation froma  set of markdown files. An easy tool to get
-started is <a href="https://www.mkdocs.org/">MkDocs</a>. For instance, we created this documentation
-with MkDocs.</p>
+automatically create documentation from  set of markdown files. An easy tool to get
+started is
+<a href="https://www.mkdocs.org/" target="_blank"><strong>MkDocs</strong></a>.
+For example, we created this documentation with MkDocs.</p>
 <h3 id="installing-mkdocs">Installing MkDocs<a class="headerlink" href="#installing-mkdocs" title="Permanent link">&para;</a></h3>
 <p>If you already have Anaconda, it is easy to get started.</p>
 <p>First, you have to install MkDocs. Open an Anaconda terminal and type</p>
 <div class="codehilite"><pre><span></span>pip install mkdocs
 </pre></div>
 
-<p>We used a special theme <a href="https://squidfunk.github.io/mkdocs-material/">Material for mkdocs</a>,
+<p>We used a special theme,
+<a href="https://squidfunk.github.io/mkdocs-material/" target="_blank"><strong>Material for MkDocs</strong></a>,
 which can be installed with:</p>
 <div class="codehilite"><pre><span></span>pip install mkdocs-material
 </pre></div>
 
 <p>This package allows to integrate a number of extensions, for advanced formatting
-of the documentation, for more information see <a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">here</a>.</p>
+of the documentation, for more information see
+<a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/" target="_blank">here</a>.</p>
 <h3 id="writing-a-documentation">Writing a documentation<a class="headerlink" href="#writing-a-documentation" title="Permanent link">&para;</a></h3>
-<p>To initialize the documentation, go to folder containing the project folder
+<p>To initialise the documentation, go to folder containing the project folder
 (<code>ImJoy-demo-project</code> in our case). Open an Anaconda terminal and run</p>
 <div class="codehilite"><pre><span></span>mkdocs new ImJoy-demo-project
 </pre></div>
@@ -518,16 +466,18 @@ of the documentation, for more information see <a href="https://squidfunk.github
 <li>Configuration file: <code>ImJoy-demo-project\mkdocs.yml</code></li>
 <li>Initialize the docs: <code>ImJoy-demo-project\docs\index.md</code></li>
 </ul>
-<p>With these two files, a first version of the documentation can already be generated.
-MkDocs provides a developmental server that you can use to check on your computer
+<p>With these two files, a first version of the documentation can already be generated.</p>
+<p>MkDocs provides a developmental server that you can use to check on your computer
 how the documentation web site will look like. For this, open an Anaconda terminal
 in your project folder and run</p>
 <p><div class="codehilite"><pre><span></span>mkdocs serve
 </pre></div>
-The website will then be available at <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
-<p>The <code>mkdocs.yml</code> file determines how your documentation is organized and looks
-like. We invite you to consult the excellent documentations of <a href="https://www.mkdocs.org/">MkDocs</a>
-and [Material for mkdocs](https://squidfunk.github.io/mkdocs-material/ for more details.</p>
+The website will then be available at <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a>.</p>
+<p>We invite you to consult the excellent documentations of
+<a href="https://www.mkdocs.org/" target="_blank">MkDocs</a>
+and
+<a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a>
+for more details.</p>
 <h3 id="deploying-your-documentation">Deploying your documentation<a class="headerlink" href="#deploying-your-documentation" title="Permanent link">&para;</a></h3>
 <p>Once the documentation is finished, you can build the website with</p>
 <p><div class="codehilite"><pre><span></span>mkdocs build
@@ -541,7 +491,8 @@ to  GitHub pages.</p>
 <p>This will create a separate branch <code>gh-pages</code> on your GitHub repository dedicated
 to the documentation. GitHub will then automatically build the website with the
 documentation for you. To obtain the URL, go the <code>Settings</code> and <code>GitHub Pages</code>.
-The URL for this website is <a href="https://muellerflorian.github.io/ImJoy-demo-project/">https://muellerflorian.github.io/ImJoy-demo-project/</a></p>
+The URL for this website is
+<a href="https://muellerflorian.github.io/ImJoy-demo-project/" target="_blank">https://muellerflorian.github.io/ImJoy-demo-project/</a>.</p>
 <p>Please note that each time you <strong>update the documentation</strong>, you have to perform these
 steps to build and deploy your documentation.</p>
                 

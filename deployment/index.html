@@ -384,11 +384,38 @@
     Create a pip package
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" title="Setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-and-test" title="Publish and test" class="md-nav__link">
+    Publish and test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#specify-pip-package" title="Specify pip package" class="md-nav__link">
-    Specify pip package
+  <a href="#add-requirement-to-imjoy-plugin" title="Add requirement to ImJoy plugin" class="md-nav__link">
+    Add requirement to ImJoy plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-module-from-github" title="Import module from GitHub" class="md-nav__link">
+    Import module from GitHub
   </a>
   
 </li>
@@ -441,11 +468,38 @@
     Create a pip package
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" title="Setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-and-test" title="Publish and test" class="md-nav__link">
+    Publish and test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#specify-pip-package" title="Specify pip package" class="md-nav__link">
-    Specify pip package
+  <a href="#add-requirement-to-imjoy-plugin" title="Add requirement to ImJoy plugin" class="md-nav__link">
+    Add requirement to ImJoy plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-module-from-github" title="Import module from GitHub" class="md-nav__link">
+    Import module from GitHub
   </a>
   
 </li>
@@ -470,11 +524,17 @@
                 <h1 id="deployment-and-stable-release">Deployment and stable release<a class="headerlink" href="#deployment-and-stable-release" title="Permanent link">&para;</a></h1>
 <p>The last step is the deployment and creating a stable release.</p>
 <p>Here we explain how you can package your module in a way that ImJoy can install
-it as a requirment via the <code>pip</code> command</p>
+it as a requirement via the <code>pip</code> command</p>
 <h3 id="create-a-pip-package">Create a pip package<a class="headerlink" href="#create-a-pip-package" title="Permanent link">&para;</a></h3>
-<p>In order to create a package that can be installed via the <code>pip</code> command, you have
-to specify a <code>setup.py</code> file. This is a simple python file in the root folder
- that specifies our package.</p>
+<h4 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
+<p>In order to create a package that can be installed via the <code>pip</code> command, you have</p>
+<ol>
+<li>Add an empty file <strong><code>__init__.py</code></strong> into the <code>pkgcode</code> folder.</li>
+<li>Specify a <code>setup.py</code> file - a simple python file in the root folder
+that specifies our package.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/setup.py" target="_blank"> <strong>setup.py</strong></a></p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
 
 <span class="n">requirements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">]</span>
@@ -493,44 +553,87 @@ to specify a <code>setup.py</code> file. This is a simple python file in the roo
       <span class="n">zip_safe</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
-<p>The important fields to adjust for your own package are</p>
+</div>
+<p>The important fields to adjust for your own package in <code>setup.py</code> are:</p>
 <ul>
 <li><code>requirements</code>: contains all requirements of your package</li>
-<li><code>name</code>: this has to be the name of the folder actually containing your modules.
+<li><code>name</code>: this has to be the name of the folder containing your modules, e.g. <code>pkgcode</code> for our demo project.
      This is not necessarily the name of your package.</li>
-<li><code>version</code>: version of your package. You can specify what you want, usually semantic
-    versioning is recommended.    [TODO: add link]</li>
+<li><code>version</code>: version of your package. You can specify what you want,
+    <a href="https://semver.org/" target="_blank"> semantic versioning</a>
+     is recommended.</li>
 <li><code>description</code>, <code>url</code>, <code>author</code>, <code>author_email</code>: self-explanatory fields.</li>
-<li>
-<p><code>licence</code>: licence type of your repository. If you are not sure which license you should use , check out <a href="https://choosealicense.com/m">choosealicense.com</a>.</p>
-<p>[TODO: add link for more infos]</p>
-<p>[TODO: how to test this?]</p>
-</li>
+<li><code>licence</code>: licence type of your repository. If you are not sure which license you should use , check out
+     <a href="https://choosealicense.com" target="_blank"> choosealicense.com</a>.</li>
 </ul>
-<p>Once your package works, you can push it to GitHub.</p>
-<h3 id="specify-pip-package">Specify pip package<a class="headerlink" href="#specify-pip-package" title="Permanent link">&para;</a></h3>
-<p>Now you can specify this package as a requirement in your plugin. ImJoy will the
-automatically download this package.</p>
-<p>We specify this in the <code>requirements</code> of the plugin.</p>
-<p>[TODO add string]</p>
-<div class="codehilite"><pre><span></span>
+<h4 id="publish-and-test">Publish and test<a class="headerlink" href="#publish-and-test" title="Permanent link">&para;</a></h4>
+<p>You can then push you changes to <strong>GitHub</strong>. Please note that it is not necessary
+that you up-load your package to the Package Index.</p>
+<p>In order to <strong>test your module</strong>, you can use the <code>pip</code> terminal command,
+which should result in a successful install as indicated in the <code>Output</code> tab.</p>
+<div class="admonition note">
+<p class="admonition-title">Test pip module</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Pip install</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>pip install git+https://github.com/muellerflorian/ImJoy-demo-project#egg<span class="o">=</span>ImJoy-demo-project
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">Output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Successfully built imjoydemoproject
+Installing collected packages: imjoydemoproject
+Successfully installed imjoydemoproject-0.1.0
+</pre></div></div>
+</div>
+</div>
+<p>You can then test if the module works by launching Python in the terminal with
+<code>python</code>. In the Python terminal, you can call the function that calculates the sine function:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">imjoydemoproject</span> <span class="kn">import</span> <span class="n">outils</span>
+<span class="n">outils</span><span class="o">.</span><span class="n">calc_sine</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 
-<p>One very important aspect is the tag specified here <code>@</code>. This allows to install
-the specified version, giving you precise control about what is installed.</p>
-<p>In the actual plugin, we now have to consider this stable version by adding</p>
-<div class="codehilite"><pre><span></span>    <span class="sb">``</span><span class="err">`</span><span class="n">python</span>
-    <span class="k">if</span> <span class="s1">&#39;dev-local&#39;</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">TAG</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">importlib</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;PathToModule&#39;</span><span class="p">)</span>
-
-      <span class="kn">import</span> <span class="nn">rnaloc</span>
-      <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">rnaloc</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="kn">import</span> <span class="nn">rnaloc</span>
+<p>More information about pip packaging can be found
+<a href="https://packaging.python.org/tutorials/packaging-projects/" target="_blank"><strong>here</strong></a>.</p>
+<h3 id="add-requirement-to-imjoy-plugin">Add requirement to ImJoy plugin<a class="headerlink" href="#add-requirement-to-imjoy-plugin" title="Permanent link">&para;</a></h3>
+<p>Now you can specify this package as a requirement in your ImJoy plugin, which will
+be automatically installed.</p>
+<p>For our example, this requirement will only be considered for the <code>stable</code> release,
+i.e. for the tag <code>stable</code></p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Sine%20Calculator.imjoy.html#L24" target="_blank"> <strong>Sine Calculator.imjoy.html</strong></a></p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;requirements&quot;</span><span class="err">:</span> <span class="p">{</span> <span class="nt">&quot;stable&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;pip:git+https://github.com/muellerflorian/ImJoy-demo-project@9cb903361d7e0fa70d6b560706201b16c83361af#egg=ImJoy-demo-project&quot;</span><span class="p">]}</span>
 </pre></div>
 
-<p>More information can be found here.</p>
+</div>
+<p>The general syntax of such a requirement is</p>
+<p><div class="codehilite"><pre><span></span><span class="s2">&quot;requirements&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;pip:git+https://github.com/{username}/{reponame}@{tagname}#egg={reponame}&quot;</span><span class="p">]</span>
+</pre></div>
+ with the following fields</p>
+<ul>
+<li><code>username</code>: name of the GitHub account.</li>
+<li><code>reponame</code>: name of the GitHub repository.</li>
+<li><code>tagname</code>: allows passing of tag. This can be a commit hash tag, a Git tag,
+   or a GitHub release, or a commit hash tag. This provides precise control <strong>which version of the repository is installed</strong>.
+   This is especially important when update your repository.</li>
+<li><code>eggname</code>: this is usually the name of your repository. This is recommended for an install of a Git repository,
+   and tells pip what to call the repository for dependency checks.</li>
+</ul>
+<p>Please note that once a package is installed, it will not be upgraded unless you specify a
+new tag specified after the <code>@</code> symbol.</p>
+<h2 id="import-module-from-github">Import module from GitHub<a class="headerlink" href="#import-module-from-github" title="Permanent link">&para;</a></h2>
+<p>We can now load the module for the stable release from GitHub.
+Please note that the alphanumeric characters after the <code>@</code> specify a certain commit.</p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Sine%20Calculator.imjoy.html#L39" target="_blank"> <strong>Sine Calculator.imjoy.html</strong></a></p>
+<div class="codehilite"><pre><span></span><span class="k">elif</span> <span class="s1">&#39;stable&#39;</span> <span class="o">==</span> <span class="n">api</span><span class="o">.</span><span class="n">TAG</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">imjoydemoproject</span> <span class="kn">import</span> <span class="n">outils</span>
+</pre></div>
+
+</div>
+<p>You can now change the <code>tag</code> in the toolbar of the menu, and save the plugin.
+Now, our pip module will be loaded.</p>
+<p>More information about installing GitHub packages in ImJoy can be found
+<a href="https://imjoy.io/docs/#/development?id=install-package-from-github" target="_blank">here</a>.</p>
                 
                   
                 

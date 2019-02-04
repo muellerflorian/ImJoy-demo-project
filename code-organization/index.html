@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#code-organization" tabindex="1" class="md-skip">
+      <a href="../#organise-your-code" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -408,36 +408,48 @@
               
                 
                 
-                <h1 id="code-organization">Code organization<a class="headerlink" href="#code-organization" title="Permanent link">&para;</a></h1>
+                <h1 id="organise-your-code">Organise your code<a class="headerlink" href="#organise-your-code" title="Permanent link">&para;</a></h1>
 <p>To get started, we created the project folder called <code>ImJoy-demo-project</code></p>
 <p>Below we show how this folder was populated during the development described
 in this tutorial. It contains files and folders for GitHub, the documentation,
 and the actual Python and ImJoy code.</p>
 <p>This might look daunting at the beginning, but we will explain in detail
 all steps that eventually results in this organisation.</p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project" target="_blank"> ImJoy-demo-project</a></p>
 <div class="codehilite"><pre><span></span>.
-├─ dev/                        # Folder containing code for development
-│  ├─ dev-calc-sine..ipynb      # Jupyter notebook
+├─ dev/                        # Step 4: Folder containing code for development
+│  ├─ dev-calc-sine.ipynb        # Jupyter notebook
 │
-├─ docs/                        # Folder containing documentation
-│  ├─ blabla.md                   # smFISH image (channel 1)
-│  ├─ assets/                     # Folder containing images of docs
-│  │  ├─ screenshot.png             # Screenshot of plugin
+├─ docs/                        # Step 3: Folder containing documentation
+│  ├─ code-organization.md        # smFISH image (channel 1)
+│  ├─ img/                        # Folder containing images of docs
+│  │  ├─ screenshot....png        # Screenshot of plugin
 │
-├─ imjoy-plugins/               # Folder containing ImJoy plugins
+├─ imjoy-plugins/               # Step 5:Folder containing ImJoy plugins
 │  ├─ plugin1.imjoy.html          # ImJoy plugin 1
 │  ├─ plugin2.imjoy.html          # ImJoy plugin 2
 │
-├─ site/                        # Folder web-site of documentation (auto created)
+├─ imjoydemoproject/            # Step 4: Folder containing actual python code
+│  ├─ __init__.py                 # File needed for packacking of module
+│  ├─ outils.py                   # Module containing functions.
+│
+├─ site/                        # Step 3: Folder web-site of documentation (auto created)
 │  ├─ ...
 │
-├─ .gitignore                   # File specifying files and folders that are ignored by git
-├─ LICENCE                      # Licence file
-├─ mkdocs.yaml                  # File defining how documentation is created
-├─ ReadMe.md                    # ReadMe file rendered on GitHub
-├─ setup.py                     # File containing ....
+├─ .gitignore                   # Step 2: File specifying files and folders that are ignored by git
+├─ LICENCE                      # Step 6: Licence file
+├─ manifest.imjoy               # Step 6: Manifest specifying ImJoy plugin repo
+├─ mkdocs.yaml                  # Step 3: File defining how documentation is created
+├─ ReadMe.md                    # Step 3: ReadMe file rendered on GitHub
+├─ setup.py                     # Step 6: File specifying pip package
+├─ update_manifest.js           # Step 6: Node script to generate ImJoy plugin repository
 .
 </pre></div>
+
+</div>
+<p>You can also find an empty template project
+  "<a href="https://github.com/oeway/ImJoy-Project-Template" target="_blank"> here</a>"</p>
                 
                   
                 

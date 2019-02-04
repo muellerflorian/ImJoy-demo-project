@@ -373,9 +373,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        7. Distribution
+      </label>
+    
     <a href="./" title="7. Distribution" class="md-nav__link md-nav__link--active">
       7. Distribution
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-imjoy-plugin-repository" title="Creating a ImJoy plugin repository" class="md-nav__link">
+    Creating a ImJoy plugin repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-a-plugin-dependency" title="Specifying a plugin dependency" class="md-nav__link">
+    Specifying a plugin dependency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-the-plugin-url-for-the-stable-release" title="Specifying the plugin url for the stable release" class="md-nav__link">
+    Specifying the plugin url for the stable release
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -397,6 +440,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-imjoy-plugin-repository" title="Creating a ImJoy plugin repository" class="md-nav__link">
+    Creating a ImJoy plugin repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-a-plugin-dependency" title="Specifying a plugin dependency" class="md-nav__link">
+    Specifying a plugin dependency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-the-plugin-url-for-the-stable-release" title="Specifying the plugin url for the stable release" class="md-nav__link">
+    Specifying the plugin url for the stable release
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -409,13 +482,60 @@
                 
                 
                 <h1 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">&para;</a></h1>
-<p>The recommended way to distribute ImJoy plugins is with a specific url</p>
-<p>here you can either use directly the plugin url.</p>
-<p>or you can add a manifest file, that allows ImJoy to treat your repository as
-a plugin repository. The advantage is that you can use a shorter syntax.
-and you can specify plugin dependencies</p>
-<div class="codehilite"><pre><span></span><span class="s2">&quot;dependencies&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;oeway/ImJoy-Plugins:Im2Im-Dashboard&quot;</span><span class="p">]</span>
+<p>The recommended way to distribute ImJoy plugins is with a specific url.</p>
+<h2 id="creating-a-imjoy-plugin-repository">Creating a ImJoy plugin repository<a class="headerlink" href="#creating-a-imjoy-plugin-repository" title="Permanent link">&para;</a></h2>
+<p>Lastly, we can add a configuration file to our GitHub repository that allows
+to distribute ImJoy plugins with simple urls, and facilitates to define dependencies
+among plugins.</p>
+<p>To use this script, you have to install node.js first. In an Anaconda terminal type
+<div class="codehilite"><pre><span></span>conda install -c conda-forge nodejs
+</pre></div></p>
+<p>Once you installed the node.js, open an Anaconda terminal in the root folder of
+the repository and type
+<div class="codehilite"><pre><span></span>node update_manifest.js
+</pre></div></p>
+<p>This will run the script, which will generate a new file <code>manifest.imjoy.json</code>.
+In this file you have to only change the name that you want to give to your plugin
+repository (usually the same name as the GitHub repository). Note that you only have
+to do this the first time you create this file for a given repository. Subsequent
+updates will not change the name.</p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/manifest.imjoy.json#L2" target="_blank"> <strong>manifest.imjoy.json</strong></a></p>
+<p>"name": "ImJoy-demo-project"</p>
+</div>
+<p>Now ImJoy recognises the GitHub repository as a plugin repository, and you can directly open
+with with this link:</p>
+<p><a href="https://imjoy.io/#/app?r=muellerflorian/imJoy-demo-project" target="_blank"> <strong>https://imjoy.io/#/app?r=muellerflorian/imJoy-demo-project</strong></a></p>
+<p><img src="../img/scrennshot-plugin-repo.png" width="500px"></img></p>
+<p>This uses</p>
+<ul>
+<li>the base url <code>https://imjoy.io/#/app?</code></li>
+<li>and the identifier or the repository  <code>r=muellerflorian/imJoy-demo-project</code>,
+    where <code>r</code> indicates that a repo should be opened, <code>muellerflorian</code> specifies
+    the GitHub account, and <code>imJoy-demo-project</code> the name of the plugin repository.</li>
+</ul>
+<h2 id="specifying-a-plugin-dependency">Specifying a plugin dependency<a class="headerlink" href="#specifying-a-plugin-dependency" title="Permanent link">&para;</a></h2>
+<p>We have to two plugins, the main  plugin <code>Sine Calculator.imjoy.html</code> to perform calculations,
+and the helper plugin <code>Charts JS.imjoy.html</code> to display the data.</p>
+<p>We can now specify this helper plugin as a dependency for the stable release in the
+main plugin. The helper plugin will then be automatically installed.</p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoy-plugins/Sine%20Calculator.imjoy.html#L25" target="_blank"> <strong>Sine Calculator.imjoy.html</strong></a></p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;dependencies&quot;</span><span class="err">:</span> <span class="p">{</span> <span class="nt">&quot;stable&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;muellerflorian/imJoy-demo-project:Charts JS&quot;</span><span class="p">]}</span>
 </pre></div>
+
+</div>
+<h2 id="specifying-the-plugin-url-for-the-stable-release">Specifying the plugin url for the stable release<a class="headerlink" href="#specifying-the-plugin-url-for-the-stable-release" title="Permanent link">&para;</a></h2>
+<p>You can also specify an url that allows to directly install the plugin:</p>
+<p><a href="https://imjoy.io/#/app?p=muellerflorian/imJoy-demo-project:Sine Calculator@stable&w=imjoy-demo-project" target="_blank"> <strong>https://imjoy.io/#/app?p=muellerflorian/imJoy-demo-project:Sine Calculator@stable&amp;w=imjoy-demo-project</strong></a></p>
+<p>This will open ImJoy with the install dialog for the specified plugin:</p>
+<p><img src="../img/screenshot-plugin-install.png" width="500px"></img></p>
+<p>In this dialog you can inspect the source code and also select the tag (<code>stable</code> or <code>dev-local</code>).</p>
+<p>Please note two parameters in the above url
+<code>@stable</code>: indicates the tag of the plugin that should be used.
+<code>w=imjoy-demo-project</code>: indicates the ImJoy workspace in which the plugin should be installed.</p>
+<p>For more informations on how to construct such plugins urls, see
+<a href="https://imjoy.io/docs/#/development?id=generating-a-plugin-url" target="_blank"> <strong>here</strong></a></p>
                 
                   
                 

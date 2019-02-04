@@ -516,15 +516,17 @@ and we invite the reader to consult these for more detailed information.</p>
 <h2 id="development-environment">Development environment<a class="headerlink" href="#development-environment" title="Permanent link">&para;</a></h2>
 <p>The actual Python code performing the calculation can be implemented, tested,
 and continued to be used outside of ImJoy.</p>
-<p>A simple way to get started in Python is using <a href="https://www.anaconda.com/distribution/">Anaconda</a>.
+<p>A simple way to get started in Python is using
+<a href="https://www.anaconda.com/distribution/" target="_blank"> <strong>Anaconda</strong></a>.
 This open source distribution comes with many Python packages pre-installed.
 Further it already contains the development environments <strong>Spyder</strong> and <strong>Jupyter Notebook</strong>.</p>
 <p>Here, we use Anaconda (Python 3.6) and <strong>Jupyter Notebook</strong>.
 In such a notebook, you can implement and test your Python code.
 To store these notebooks, we create a subfolder <code>dev</code> in the project folder <code>ImJoy-demo-project</code>.</p>
-<p>The notebook <code>dev-calc-sine.ipynb</code> contains the developed code.</p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/dev/dev-calc-sine.ipynb" target="_blank"> <strong>dev-calc-sine.ipynb</strong></a></p>
 <p><img src="../img/screenshot-jupyter.png" width="500px"></img></p>
-<p><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/dev/dev-calc-sine.ipynb" target="_blank"> <strong>Full file is here &gt;&gt;</strong></a></p>
+</div>
 <h2 id="package-code-as-python-module">Package code as Python module<a class="headerlink" href="#package-code-as-python-module" title="Permanent link">&para;</a></h2>
 <p>Once your code is working, you can package it as a module.</p>
 <p>Python modules are <code>.py</code> files that consist of Python code. They can contain
@@ -536,9 +538,9 @@ generated in your actual ImJoy plugin. For instance, we will ask the user to
 specify the number of data-points that should be calculated.</p>
 <h3 id="make-module">Make module<a class="headerlink" href="#make-module" title="Permanent link">&para;</a></h3>
 <p>We will wrap the above code in a function as shown below. This function is then
-saved in a <code>.py</code> file (<code>outils.py</code> in the subfolder <code>pkgcode</code>).</p>
+saved in a <code>.py</code> file (<code>outils.py</code> in the subfolder <code>imjoydemoproject</code>).</p>
 <div class="admonition note">
-<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/pkgcode/outils.py#L21" target="_blank"> <strong>outils.py</strong></a></p>
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/imjoydemoproject/outils.py#19" target="_blank"> <strong>outils.py</strong></a></p>
 <div class="codehilite"><pre><span></span><span class="c1"># Define a function</span>
 <span class="k">def</span> <span class="nf">calc_sine</span><span class="p">(</span><span class="n">n_points</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="o">/</span><span class="n">n_points</span><span class="p">),</span><span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -548,15 +550,15 @@ saved in a <code>.py</code> file (<code>outils.py</code> in the subfolder <code>
 
 </div>
 <p>It is good practice to comment your  code, e.g. following the guidelines of
-<a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings">Google</a>.</p>
-<p>In order to be able to import this module, we have to <strong>update the Python
-sys path</strong>. Assuming the we open the Jupyter notebook, we can do this with a
+<a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings" target="_blank"> *<em>Google</em></a></p>
+<p>In order to be able to import this module, we have to <strong>update the Python sys path</strong>.
+Assuming the we open the Jupyter notebook, we can do this with a
 relative path, but an absolute path will work as well.</p>
 <div class="admonition note">
 <p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/dev/dev-calc-sine.ipynb" target="_blank"> <strong>dev-calc-sine.ipynb</strong></a></p>
 <div class="codehilite"><pre><span></span><span class="c1"># Update system path</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../pkgcode&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../imjoydemoproject&#39;</span><span class="p">)</span>
 
 <span class="c1"># Import outils module</span>
 <span class="kn">import</span> <span class="nn">outils</span>
