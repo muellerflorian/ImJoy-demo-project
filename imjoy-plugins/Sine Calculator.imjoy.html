@@ -1,0 +1,79 @@
+<docs lang="markdown">
+Demo plugin to demonstrate how to plot charts in ImJoy. For this, some data is generated
+in a Pythons plugin andd displayed in a separate window. We demonstrate two different options
+
+Here, we can send the data to a window plugin. This plugin then uses [Plotly](https://plot.ly/javascript/)
+to display the data.
+
+</docs>
+
+<config lang="json">
+{
+  "name": "Sine Calculator",
+  "type": "native-python",
+  "version": "0.1.0",
+  "api_version": "0.1.2",
+  "description": "PyWorker plugin sending data to 'Charts JS' plugin to plot.",
+  "tags": ["stable","dev-local"],
+  "ui": ["# of data points : {id:'n_points', type: 'number', min: 0, placeholder:20}"],
+  "inputs": null,
+  "outputs": null,
+  "flags": [],
+  "icon": "rowing",
+  "env": null,
+  "requirements": { "stable": ["pip:git+https://github.com/muellerflorian/ImJoy-demo-project@5aab7ddf194b40aca7b558fe940705440c9b43a6#egg=ImJoy-demo-project"]},
+  "dependencies": { "stable": ["muellerflorian/imJoy-demo-project:Charts JS"]}
+}
+</config>
+
+<script lang="python">
+
+if 'dev-local' == api.TAG:
+    import importlib
+    import sys
+
+    sys.path.insert(0, '/Volumes/PILON_HD2/fmueller/Documents/code/ImJoy_dev/ImJoy-demo-project/imjoydemoproject')
+    import outils
+    importlib.reload(outils)
+
+elif 'stable' == api.TAG:
+    from imjoydemoproject import outils
+
+import numpy as np
+import asyncio
+
+class ImJoyPlugin():
+
+    # Setup function
+    def setup(self):
+        self.window = None
+
+    # Run upon plugin execution
+    async def run(self, my):
+
+        # Compute sine on plugin engine
+        x,y = outils.calc_sine(my.config.n_points)
+
+        # Show results on plugin engine
+        print(f'x values: {x}')
+        print(f'y values: {y}')
+
+        # Show results in ImJoy log
+        api.log(f'x values: {x}')
+        api.log(f'x values: {x}')
+
+        # Plot data in window plugin
+        data_plot = {   'name':'Plot charts - with JavaScript',
+                        'type':'Charts JS',
+                        'w':20, 'h':15,
+                        'data':{
+                            'x': x.tolist(),
+                            'y': y.tolist()
+                        }
+                    }
+
+        # Export plugin api
+        await api.createWindow(data_plot)
+
+api.export(ImJoyPlugin())
+</script>

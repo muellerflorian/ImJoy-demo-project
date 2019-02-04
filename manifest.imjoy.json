@@ -1,0 +1,61 @@
+{
+ "name": "ImJoy-demo-project",
+ "description": "ImJoy demo project plugin repository.",
+ "uri_root": "",
+ "version": "0.2.0",
+ "plugins": [
+  {
+   "name": "Charts JS",
+   "type": "window",
+   "tags": [],
+   "ui": "",
+   "version": "0.1.0",
+   "api_version": "0.1.2",
+   "description": "Window plugin to show received data with Plotly library.",
+   "icon": "photo",
+   "inputs": null,
+   "outputs": null,
+   "runnable": false,
+   "requirements": [
+    "https://cdn.plot.ly/plotly-latest.min.js"
+   ],
+   "dependencies": [],
+   "defaults": {
+    "w": 10,
+    "h": 20
+   },
+   "uri": "imjoy-plugins/Charts JS.imjoy.html"
+  },
+  {
+   "name": "Sine Calculator",
+   "type": "native-python",
+   "version": "0.1.0",
+   "api_version": "0.1.2",
+   "description": "PyWorker plugin sending data to 'Charts JS' plugin to plot.",
+   "tags": [
+    "stable",
+    "dev-local"
+   ],
+   "ui": [
+    "# of data points : {id:'n_points', type: 'number', min: 0, placeholder:20}"
+   ],
+   "inputs": null,
+   "outputs": null,
+   "flags": [],
+   "icon": "rowing",
+   "env": null,
+   "requirements": {
+    "stable": [
+     "pip:git+https://github.com/muellerflorian/ImJoy-demo-project@5aab7ddf194b40aca7b558fe940705440c9b43a6#egg=ImJoy-demo-project"
+    ]
+   },
+   "dependencies": {
+    "stable": [
+     "muellerflorian/imJoy-demo-project:Charts JS"
+    ]
+   },
+   "uri": "imjoy-plugins/Sine Calculator.imjoy.html"
+  }
+ ],
+ "collections": []
+}

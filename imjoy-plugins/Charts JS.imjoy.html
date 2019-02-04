@@ -1,0 +1,60 @@
+<docs lang="markdown">
+Window plugin to show data received from a Python worker in a JS chart.
+Uses [Plotly.js](https://plot.ly/javascript/).
+
+Please note that when run by itself the plugin does not display anything.
+</docs>
+
+<config lang="json">
+{
+  "name": "Charts JS",
+  "type": "window",
+  "tags": [],
+  "ui": "",
+  "version": "0.1.0",
+  "api_version": "0.1.2",
+  "description": "Window plugin to show received data with Plotly library.",
+  "icon": "photo",
+  "inputs": null,
+  "outputs": null,
+  "runnable": false,
+  "requirements": ["https://cdn.plot.ly/plotly-latest.min.js"],
+  "dependencies": [],
+  "defaults": {"w": 10, "h":20}
+}
+</config>
+
+<script lang="javascript">
+class ImJoyPlugin {
+
+  async setup() {
+
+    };
+
+  run(my) {
+
+    // Clear div
+    document.getElementById('chart').innerHTML = "";
+
+    // Call plotly
+    var myPlot = document.getElementById('chart'),
+        data = [ { x:my.data.x,
+                    y:my.data.y,
+                    type:'scatter',
+                    mode:'lines+markers',
+                    marker:{size:5} } ],
+        layout = { };
+
+    Plotly.newPlot(myPlot, data, layout,{responsive: true});
+    }
+  }
+
+
+api.export(new ImJoyPlugin())
+</script>
+
+<window lang="html">
+    <div>
+        <div id="chart"></div>
+    </div>
+</window>
