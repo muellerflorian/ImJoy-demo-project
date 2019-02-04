@@ -551,7 +551,9 @@ saved in a <code>.py</code> file (<code>outils.py</code> in the subfolder <code>
 <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings">Google</a>.</p>
 <p>In order to be able to import this module, we have to <strong>update the Python
 sys path</strong>. Assuming the we open the Jupyter notebook, we can do this with a
-relative path, but an absolute path will work as well.
+relative path, but an absolute path will work as well.</p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://github.com/muellerflorian/ImJoy-demo-project/blob/master/dev/dev-calc-sine.ipynb" target="_blank"> <strong>dev-calc-sine.ipynb</strong></a></p>
 <div class="codehilite"><pre><span></span><span class="c1"># Update system path</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../pkgcode&#39;</span><span class="p">)</span>
@@ -561,7 +563,9 @@ relative path, but an absolute path will work as well.
 
 <span class="c1"># Call function</span>
 <span class="n">outils</span><span class="o">.</span><span class="n">calc_sine</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-</pre></div></p>
+</pre></div>
+
+</div>
                 
                   
                 
